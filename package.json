@@ -22,6 +22,7 @@
     "test-unit": "node ./bin/test.js",
     "test-unit-coverage": "node ./bin/test.js --coverage",
     "build": "tsc -b ./tsconfig.all.json",
+    "build-es6": "tsc -b ./tsconfig.es6.json && rollup -c",
     "prepare": "npm run setup",
     "setup": "npm run build",
     "presetup": "node ./bin/install-addons.js",
@@ -34,6 +35,8 @@
     "vtfeatures": "node bin/extract_vtfeatures.js src/**/*.ts src/*.ts"
   },
   "devDependencies": {
+    "@rollup/plugin-alias": "^3.1.2",
+    "@rollup/plugin-node-resolve": "^11.2.0",
     "@types/chai": "^4.2.14",
     "@types/debug": "^4.1.5",
     "@types/deep-equal": "^1.0.1",
@@ -58,6 +61,7 @@
     "node-pty": "^0.9.0",
     "nyc": "^15.1.0",
     "playwright": "^1.5.2",
+    "rollup": "^2.41.0",
     "source-map-loader": "^1.1.2",
     "ts-loader": "^8.0.8",
     "typescript": "~4.1.3",
