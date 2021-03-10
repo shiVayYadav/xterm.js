@@ -23,6 +23,7 @@
   },
   "references": [
     { "path": "./src/browser/tsconfig.es6.json" },
-    { "path": "./src/common/tsconfig.es6.json" }
+    { "path": "./src/common/tsconfig.es6.json" },
+    { "path": "./addons/xterm-addon-fit/src/tsconfig.es6.json" }
   ]
 }
