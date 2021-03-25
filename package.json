@@ -1,15 +1,16 @@
 {
-  "name": "xterm",
+  "name": "@bbbottle/xterm",
   "description": "Full xterm terminal, in your browser",
-  "version": "4.11.0",
+  "version": "4.12.1",
   "main": "lib/xterm.js",
+  "files": [
+    "dist/es6"
+  ],
   "style": "css/xterm.css",
   "types": "typings/xterm.d.ts",
-  "repository": "https://github.com/xtermjs/xterm.js",
+  "repository": "https://github.com/bbbottle/xterm.js",
   "license": "MIT",
   "scripts": {
-    "prepackage": "npm run build",
-    "package": "webpack",
     "start": "node demo/start",
     "start-debug": "node --inspect-brk demo/start",
     "lint": "eslint -c .eslintrc.json --max-warnings 0 --ext .ts src/ addons/",
@@ -23,10 +24,9 @@
     "test-unit-coverage": "node ./bin/test.js --coverage",
     "build": "tsc -b ./tsconfig.all.json",
     "build-es6": "tsc -b ./tsconfig.es6.json && rollup -c",
-    "prepare": "npm run setup",
+    "prepare": "yarn build-es6",
     "setup": "npm run build",
     "presetup": "node ./bin/install-addons.js",
-    "prepublishOnly": "npm run package",
     "watch": "tsc -b -w ./tsconfig.all.json --preserveWatchOutput",
     "benchmark": "NODE_PATH=./out xterm-benchmark -r 5 -c test/benchmark/benchmark.json",
     "benchmark-baseline": "NODE_PATH=./out xterm-benchmark -r 5 -c test/benchmark/benchmark.json --baseline out-test/benchmark/test/benchmark/*benchmark.js",
